@@ -1,5 +1,7 @@
-import styles from './appInformation.module.css';
+import PropTypes from 'prop-types';
 
-export const AppInromationLayout = ({ information }) => (
-	<div className={styles.appInformation}>{information}</div>
-);
+export const AppInromationLayout = ({ information }) => <div>{information}</div>;
+
+AppInromationLayout.propTypes = {
+	information: PropTypes.string,
+};

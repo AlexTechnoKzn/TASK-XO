@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { AppLayout } from './app-layout';
 import { STATUS, PLAYER } from './constants';

@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import styles from './App.module.css';
+import { STATUS, PLAYER } from './constants';
 import { Field, AppInformation } from './components';
 
 export const AppLayout = ({
@@ -16,3 +18,13 @@ export const AppLayout = ({
 		</button>
 	</div>
 );
+
+AppLayout.propTypes = {
+	status: PropTypes.oneOf([STATUS.DRAW, STATUS.TURN, STATUS.WIN]),
+	currentPlayer: PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NOTHING]),
+	field: PropTypes.arrayOf(
+		PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NOTHING]),
+	),
+	handleSymlClick: PropTypes.func,
+	handleRestart: PropTypes.func,
+};

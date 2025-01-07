@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import styles from './field.module.css';
-import { PLAYER_ZNAK } from '../../constants';
+import { PLAYER, PLAYER_ZNAK } from '../../constants';
+
 export const FieldLayout = ({ field, handleSymlClick }) => (
 	<div className={styles.field}>
 		{field.map((cellPlayer, index) => (
@@ -13,3 +15,10 @@ export const FieldLayout = ({ field, handleSymlClick }) => (
 		))}
 	</div>
 );
+
+FieldLayout.propTypes = {
+	field: PropTypes.arrayOf(
+		PropTypes.oneOf([PLAYER.CROSS, PLAYER.NOUGHT, PLAYER.NOTHING]),
+	),
+	handleSymlClick: PropTypes.func,
+};
